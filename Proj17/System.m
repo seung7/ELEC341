@@ -61,8 +61,9 @@ Amp0d   = [1];               % Denominator
 AmpSat0 = Big;
 
 % Electrical Motor Dynamics
+% I/V = 1/Z = 1/(sL+R) = 1/ (0.362L+5.39)
 Elec0n  = [1];               % Numerator
-Elec0d  = [1];               % Denominator
+Elec0d  = [0.362 5.39];      % Denominator
 
 % Torque Const & Back EMF
 TConst0  = 1;
