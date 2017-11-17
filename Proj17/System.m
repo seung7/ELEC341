@@ -56,14 +56,14 @@ StallI1 = 1;                 % Max peak current
 % ==========================
 
 % Amplifier Dynamics
-Amp0n   = [1];               % Numerator
-Amp0d   = [1];               % Denominator
+Amp0n   = [49.1383];               % Numerator
+Amp0d   = [1 49.1667];               % Denominator
 AmpSat0 = Big;
 
 % Electrical Motor Dynamics
 % I/V = 1/Z = 1/(sL+R) = 1/ (0.362L+5.39)
 Elec0n  = [1];               % Numerator
-Elec0d  = [0.362 5.39];      % Denominator
+Elec0d  = [0.000362 5.39];      % Denominator
 
 % Torque Const & Back EMF
 TConst0  = 1;
