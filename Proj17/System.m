@@ -126,7 +126,7 @@ JTotal = JM + JQ1 + JCW + JR; %Summing up moments of inertia, kgm^2
 %B = 1/(spd-torque-grad*conversion-to-rad/s)
 DynamF = 2/(((Q0(SpdTorqueGrad)*1000)*RadPSecPerRPM)); %Nm/(rad/s)
 
-K = 0.007; %Given in project document, m
+K = 0.007/(2*pi); %Given in project document, m
 
 Mech0n = [1 0]; %Note that term in denominator puts a zero in the numerator
 Mech0d = [JTotal DynamF K]; %All units in SI units as above
