@@ -11,8 +11,6 @@
 % Example: if you decide to work in (Kg), all masses must be represented
 %          in (Kg) but the spec sheet may provide masses in (g)
 
-CONSTANTS; % This will incldue CONSTANTS.m file
-
 %Ring Mass Calculations
 
 %Converting units to SI units
@@ -223,13 +221,9 @@ StFric1 = 0; %Q1 has no significant static friction as laser is weightless
 
 A = tf(Amp0n, Amp0d);% Amplifier TF
 E = tf(Elec0n, Elec0n);% Elec dynamic TF
-T = TConst0; % Torque constant
+K = Tconst0; % Torque constant
 M = tf(Mech0n, Mech0d); %Mech dynamic TF
-I = tf([0],[1]); % Integration block
-S = Sens0; %Sensor gain
-B = BackEMF0;
-% FB is part of Control.m
+S = Sens0;
 
 
-motor = A * feedback(E*T*M,B);
 
