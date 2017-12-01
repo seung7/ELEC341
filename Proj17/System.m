@@ -232,6 +232,7 @@ B = BackEMF0;
 
 % FB is part of Control.m
 
-motor = A * feedback(E*T*M,B) * S;
-
-
+motor = A * feedback(E*T*M,B);
+% rlocus(motor); %This will show roots locus
+% pzmap(motor); %This will show the Poles/aeros
+% zpk(motor); %This will show facutorized values
