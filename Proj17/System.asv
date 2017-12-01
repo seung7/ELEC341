@@ -232,6 +232,6 @@ B = BackEMF0;
 
 % FB is part of Control.m
 
-motor = A * feedback(E*T*M,B) * S;
+motor = A * feedback(E*T*M,B);
 
 
