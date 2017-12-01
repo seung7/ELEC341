@@ -1,5 +1,5 @@
 % This script sets the controller parameters for the SLS 3-D Printer
-
+TRAJECTORY;
 % ================
 % CONTROLLER GAINS
 % ================
@@ -45,7 +45,7 @@
 % No more than 3 significant figures per gain value.
 
 PID0 = [0.2843, 14.11, 1]; %[Kp Ki Kd]
-%PID1 = [1 0 0]; %[Kp Ki Kd]
+PID1 = [1 0 0]; %[Kp Ki Kd]
 
 % Enter feedback sensor values here.
 
