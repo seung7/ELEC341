@@ -12,7 +12,6 @@
 %          in (Kg) but the spec sheet may provide masses in (g)
 
 %Ring Mass Calculations
-CONSTANTS; % This will incldue CONSTANTS.m file
 
 %Converting units to SI units
 LinkR1M = LinkR1/1000; %m
@@ -36,7 +35,7 @@ RingTotalV = RingOuterV-RingInnerV; %m^3
 %Default motors for both
 AMAX22_6W_SB;
 Q0 = MotorParam;
-AMAX22_6W_SB;
+AMAX16_2W_SB;
 Q1 = MotorParam;
 
 % Motor Unit Conversions
@@ -221,18 +220,3 @@ StFric1 = 0; %Q1 has no significant static friction as laser is weightless
 % ==================
 % Compute transfer functions from above values and perform system analysis
 % You may prefer to put this section in a separate .m file
-
-A = tf(Amp0n, Amp0d);% Amplifier TF
-E = tf(Elec0n, Elec0n);% Elec dynamic TF
-T = TConst0; % Torque constant
-M = tf(Mech0n, Mech0d); %Mech dynamic TF
-I = tf([0],[1]); % Integration block
-S = Sens0; %Sensor gain
-B = BackEMF0;
-
-% FB is part of Control.m
-
-motor = A * feedback(E*T*M,B);
-% rlocus(motor); %This will show roots locus
-% pzmap(motor); %This will show the Poles/aeros
-% zpk(motor); %This will show facutorized values
